@@ -21,12 +21,12 @@
       <input id="m" placeholder="Enter your message..." autocomplete="off" required /><button>Send</button>
     </form>
 
-    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 		
-    		// var socket = io();
-			var socket = require('https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js');
+    		var socket = io();
+			// var socket = require('https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js');
 
 
     		socket.emit('joining msg', name);
