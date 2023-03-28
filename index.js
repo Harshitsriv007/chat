@@ -11,6 +11,15 @@ app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname,'./client/public')));
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+});
 
 const server = app.listen(PORT, () => {
     console.log("Listening on port: " + PORT);
