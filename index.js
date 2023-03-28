@@ -3,6 +3,7 @@ const express = require("express");
 // const bodyparser = require("https://cdn.jsdelivr.net/npm/body-parser@1.20.2/lib/types/raw.min.js");
 const bodyparser = require("body-parser");
 var path = require('path');
+const cors = require('cors');
 
 PORT = 5055;
 
