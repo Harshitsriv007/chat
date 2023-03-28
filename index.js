@@ -8,7 +8,7 @@ PORT = 5055;
 app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}))
-app.use(express.static(path.join(__dirname,'./public')));
+app.use(express.static(path.join(__dirname,'./client/public')));
 
 const server = app.listen(PORT, () => {
     console.log("Listening on port: " + PORT);
@@ -19,7 +19,7 @@ const io = require('socket.io')(server);
 
 
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(__dirname + '/client/public/index.html');
   });
   
   
