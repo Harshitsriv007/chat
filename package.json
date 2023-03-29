@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "proxy": "http://harshitsriv007.github.io/chat/",
+  "proxy": "http://localhost:3000/",
   "scripts": {
     "client": "npm start --prefix client",
     "server": "nodemon index.js",
