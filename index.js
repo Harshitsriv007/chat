@@ -22,12 +22,13 @@ app.use(
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 });
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+// const server = app.listen(PORT, () => {
+//     console.log("Listening on port: " + PORT);
+// });
 
-const server = app.listen(PORT, () => {
-    console.log("Listening on port: " + PORT);
-});
-
-const io = require('socket.io')(server);
+// const io = require('socket.io')(server);
 // const io = require('https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js')(server);
 
 
@@ -60,3 +61,8 @@ app.get('/', (req, res) => {
       socket.broadcast.emit('chat message', msg);         //sending message to all except the sender
     });
   });
+
+
+  const server = app.listen(PORT, () => {
+    console.log("Listening on port: " + PORT);
+});
