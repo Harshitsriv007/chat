@@ -5,7 +5,7 @@ const bodyparser = require("body-parser");
 var path = require('path');
 const cors = require('cors');
 
-PORT = 5055;
+PORT = "https://harshitsriv007.github.io/chat/";
 
 
 app = express();
@@ -19,7 +19,6 @@ app.use(
     origin: "*",
   })
 );
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 });
