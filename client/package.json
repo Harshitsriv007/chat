@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://harshitsriv007.github.io/chat/",
+  "proxy": "http://127.0.0.1:5055/",
   "homepage": "https://Harshitsriv007.github.io/chat/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
