@@ -10,8 +10,8 @@ PORT = 5055;
 app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}))
-// app.use(express.static(path.join(__dirname,'./client/public')));
-app.use(express.static(path.join('./client/public')));
+app.use(express.static(path.join(__dirname,'./client/public')));
+// app.use(express.static(path.join('./client/public')));
 
 app.use(
   cors({
@@ -36,8 +36,8 @@ var io = require('socket.io').listen(server);
 {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> */}
 
 app.get('/', (req, res) => {
-    // res.sendFile(__dirname + '/client/public/index.html');
-    res.sendFile('./client/public/index.html');
+    res.sendFile(__dirname + './client/public/index.html');
+    // res.sendFile('./client/public/index.html');
   });
   
   
