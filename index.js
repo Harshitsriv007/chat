@@ -3,9 +3,10 @@ const express = require("express");
 const bodyparser = require("body-parser");
 var path = require('path');
 const cors = require('cors');
+const http = require("http");
 
-PORT = 5055;
-
+PORT = (process.env.PORT) ?process.env.PORT :5055;
+console.log(PORT);
 
 app = express();
 app.use(bodyparser.json());
@@ -23,7 +24,11 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 });
 var server = http.createServer(app);
-var io = require('socket.io').listen(server);
+// var io = require('socket.io').listen(server);
+const { Server } = require('socket.io'); 
+const io = new Server(server);
+io.listen(server);
+
 // const server = app.listen(PORT, () => {
 //     console.log("Listening on port: " + PORT);
 // });
@@ -63,6 +68,6 @@ app.get('/', (req, res) => {
   });
 
 
-  const server = app.listen(PORT, () => {
+  app.listen(PORT, () => {
     console.log("Listening on port: " + PORT);
 });
