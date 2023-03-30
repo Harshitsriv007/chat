@@ -28,10 +28,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
 		
-    		var socket = io.connect("https://harshitsriv007.github.io/chat/");
+    		// var socket = io.connect("https://harshitsriv007.github.io/chat/");
 			
     		// var socket = io.connect("http://localhost:3000/");
-
+			var socket = io();
     		socket.emit('joining msg', name);
 
     		$('form').submit(function(e) {
