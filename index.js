@@ -28,7 +28,8 @@ const server = app.listen(PORT, () => {
     console.log("Listening on port: " + PORT);
 });
 
-const io = require('socket.io')(server);
+// server = "https://harshitsriv007.github.io/chat/";
+const io = require('socket.io')("https://harshitsriv007.github.io/chat/");
 // const io = require('https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js')(server);
 
 
@@ -36,7 +37,7 @@ const io = require('socket.io')(server);
 {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.1/socket.io.js" integrity="sha512-xbQU0+iHqhVt7VIXi6vBJKPh3IQBF5B84sSHdjKiSccyX/1ZI7Vnkt2/8y8uruj63/DVmCxfUNohPNruthTEQA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> */}
 
 app.get('/', (req, res) => {
-  console.log("Wer");
+  // console.log("Wer");
     // res.sendFile(__dirname + '/client/public/index.html');
     // res.sendFile('./client/public/index.html');
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
