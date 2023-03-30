@@ -12,7 +12,8 @@ app = express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: false}))
 // app.use(express.static(path.join(__dirname,'./client/public')));
-app.use(express.static(path.join('./client/public')));
+// app.use(express.static(path.join('./client/public')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(
   cors({
@@ -37,7 +38,9 @@ const io = require('socket.io')(server);
 app.get('/', (req, res) => {
   console.log("Wer");
     // res.sendFile(__dirname + '/client/public/index.html');
-    res.sendFile('./client/public/index.html');
+    // res.sendFile('./client/public/index.html');
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+
   });
   
   
